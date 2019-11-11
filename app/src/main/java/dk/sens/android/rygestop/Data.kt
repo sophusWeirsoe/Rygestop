@@ -22,7 +22,7 @@ class Data : Fragment()
                 }
             }
     }
-
+//comment
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
