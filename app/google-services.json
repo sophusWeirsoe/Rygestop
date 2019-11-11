@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "587295917417",
+    "firebase_url": "https://rygeapp.firebaseio.com",
+    "project_id": "rygeapp",
+    "storage_bucket": "rygeapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587295917417:android:62fe978ec6ceea2324e9f8",
+        "android_client_info": {
+          "package_name": "dk.sens.android.rygestop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587295917417-bak38gchagq8lnibefdg0ntf51nj0afv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3k_IXuIDfK4irT81JD79Q-CjJKzWP8XA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587295917417-bak38gchagq8lnibefdg0ntf51nj0afv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
