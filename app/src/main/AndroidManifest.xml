@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="dk.sens.android.rygestop">
 
-
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -10,9 +9,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".Data"></activity>
-        <activity android:name=".Overview"></activity>
-        <activity android:name=".ryge"></activity>
+        <activity android:name=".Webview"></activity>
+        <activity android:name=".textList" />
+        <activity android:name=".Data" />
+        <activity android:name=".Overview" />
+        <activity android:name=".ryge" />
         <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,8 +29,6 @@
         <service
                 android:name=".NotificationService"
                 android:enabled="true" />
-
-
     </application>
 
 </manifest>

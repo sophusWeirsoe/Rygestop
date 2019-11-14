@@ -9,13 +9,11 @@ import java.util.*
 
 class Main2Activity : AppCompatActivity() {
 
-    private val mNotificationTime = Calendar.getInstance().timeInMillis + 60000*60 //Set after one hour from the current time.
-    private var mNotified = false
+    private val mNotificationTime = Calendar.getInstance().timeInMillis + 5000*60 //Set after one hour from the current time.
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_songs -> {
-             //   toolbar.title = "Songs"
                 val Overview = Overview.newInstance()
                 openFragment(Overview)
 
@@ -27,7 +25,7 @@ class Main2Activity : AppCompatActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_artists -> {
-                val data = Data.newInstance()
+                val data = textListFragment.newInstance()
                 openFragment(data)
                 return@OnNavigationItemSelectedListener true
             }
@@ -41,16 +39,15 @@ class Main2Activity : AppCompatActivity() {
 
        val text = intent.getStringExtra("text") ?: ""
         if (text.equals("text")){
-            openFragment(Data.newInstance())
+            openFragment(textListFragment.newInstance())
         }
        else {
             openFragment(Overview.newInstance())
         }
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-        if (!mNotified) {
             NotificationUtils().setNotification(mNotificationTime, this@Main2Activity)
-        }
+
 
     }
     private fun openFragment(fragment: Fragment) {
