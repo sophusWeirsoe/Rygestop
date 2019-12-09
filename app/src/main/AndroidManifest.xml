@@ -5,12 +5,12 @@
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
+            android:label="Ryge-afvænning"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".Webview"></activity>
-        <activity android:name=".textList" />
+        <activity android:name=".TextAssignment"></activity>
+        <activity android:name=".Webview" />
         <activity android:name=".Data" />
         <activity android:name=".Overview" />
         <activity android:name=".ryge" />

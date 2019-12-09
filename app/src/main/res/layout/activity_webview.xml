@@ -6,14 +6,27 @@
         android:layout_height="match_parent"
         tools:context=".Webview">
 
-
     <WebView
             android:id="@+id/webview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout_editor_absoluteX="-2dp"
-            tools:layout_editor_absoluteY="-138dp" >
+            android:layout_marginBottom="50dp"
+            app:layout_constraintBottom_toBottomOf="parent">
 
     </WebView>
+
+    <ImageButton
+            android:id="@+id/imageButtonNext"
+            android:layout_width="73dp"
+            android:layout_height="83dp"
+            android:background="#00FFFFFF"
+            android:scaleType="fitStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/webview"
+            app:srcCompat="@drawable/next_grey_24dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

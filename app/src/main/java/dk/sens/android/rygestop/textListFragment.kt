@@ -43,7 +43,16 @@ class textListFragment : Fragment(){
         val rv = rootView.findViewById(R.id.recyclerView1) as RecyclerView // Add this
         rv.layoutManager = LinearLayoutManager(activity)
         val texts = ArrayList<Text>()
-        texts.add(Text("Text1", "Click to read"))
+        texts.add(Text("Ryge-afvænning tekst 1", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 2", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 3", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 4", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 5", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 6", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 7", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 8", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 9", "Tryk for at læse"))
+        texts.add(Text("Ryge-afvænning tekst 10", "Tryk for at læse"))
         var adapter = Adapter(texts,{text : Text -> ItemClicked(text)} )
         rv.adapter = adapter
         return rootView

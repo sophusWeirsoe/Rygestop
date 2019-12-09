@@ -3,14 +3,14 @@
 
     <item
             android:id="@+id/navigation_songs"
-            android:title="Overview"/>
+            android:title="Overblik"/>
 
     <item
             android:id="@+id/navigation_albums"
-            android:title="Smoked"/>
+            android:title="Røget"/>
 
     <item
             android:id="@+id/navigation_artists"
-            android:title="Data"/>
+            android:title="Tekster"/>
 
 </menu>
