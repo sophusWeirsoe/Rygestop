@@ -15,9 +15,11 @@ class Webview : AppCompatActivity() {
         setContentView(R.layout.activity_webview)
         webview.loadUrl("file:///android_asset/html/text.html")
         webview.getSettings().setBuiltInZoomControls(true)
+        val ID = intent.getIntExtra("ID", 0)
 
         imageButtonNext.setOnClickListener {
             val intent = Intent(this, TextAssignment::class.java)
+            intent.putExtra("ID",ID)
             startActivity(intent)
         }
 

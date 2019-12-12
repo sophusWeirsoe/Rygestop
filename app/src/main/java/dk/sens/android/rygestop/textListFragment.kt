@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_data.*
+import java.time.LocalDateTime
 
 class textListFragment : Fragment(){
 
@@ -42,17 +43,20 @@ class textListFragment : Fragment(){
         val rootView = inflater.inflate(R.layout.activity_text_list, container, false)
         val rv = rootView.findViewById(R.id.recyclerView1) as RecyclerView // Add this
         rv.layoutManager = LinearLayoutManager(activity)
-        val texts = ArrayList<Text>()
-        texts.add(Text("Ryge-afvænning tekst 1", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 2", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 3", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 4", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 5", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 6", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 7", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 8", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 9", "Tryk for at læse"))
-        texts.add(Text("Ryge-afvænning tekst 10", "Tryk for at læse"))
+
+
+
+
+
+        var texts  = sharedPref.loadArrayList("key2", activity)
+        if (texts == null)
+        {
+                texts = ArrayList<Text>()
+                texts.add(Text("Ryge-afvænning tekst " + (texts.size +1).toString(), "Tryk for at læse", texts.size, false))
+                sharedPref.saveArrayList(texts, "key2", activity)
+        }
+
+
         var adapter = Adapter(texts,{text : Text -> ItemClicked(text)} )
         rv.adapter = adapter
         return rootView
@@ -62,7 +66,18 @@ class textListFragment : Fragment(){
 
     private fun ItemClicked(text : Text) {
         val intent = Intent(context, Webview::class.java)
-        startActivity(intent)
+        intent.putExtra("ID", text.ID)
+
+        val intent2 = Intent(context, TextAssignment::class.java)
+        intent2.putExtra("ID", text.ID)
+
+        if(!text.done) {
+            startActivity(intent)
+        }
+        else {
+            startActivity(intent2)
+
+        }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?)

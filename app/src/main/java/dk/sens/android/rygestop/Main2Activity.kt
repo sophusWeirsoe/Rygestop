@@ -9,7 +9,7 @@ import java.util.*
 
 class Main2Activity : AppCompatActivity() {
 
-    private val mNotificationTime = Calendar.getInstance().timeInMillis + 5000*60 //Set after one hour from the current time.
+    private val mNotificationTime = Calendar.getInstance().timeInMillis + 1000*60*5 //Set after one hour from the current time.
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
