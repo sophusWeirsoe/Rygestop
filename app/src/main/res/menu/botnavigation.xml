@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-            android:id="@+id/navigation_songs"
+            android:id="@+id/navigation_overblik"
             android:title="Overblik"/>
 
     <item
-            android:id="@+id/navigation_albums"
-            android:title="Røget"/>
+            android:id="@+id/navigation_settings"
+            android:title="Indstillinger"/>
 
     <item
-            android:id="@+id/navigation_artists"
+            android:id="@+id/navigation_text"
             android:title="Tekster"/>
 
 </menu>

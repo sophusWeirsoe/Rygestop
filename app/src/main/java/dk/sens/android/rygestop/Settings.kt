@@ -4,21 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.crashlytics.android.Crashlytics
-import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_ryge.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import kotlinx.android.synthetic.main.activity_settings.*
 
-class ryge : Fragment() {
+class Settings : Fragment() {
 
     companion object {
 
         @JvmStatic
         fun newInstance() =
-            ryge().apply {
+            Settings().apply {
                 arguments = Bundle().apply {
                     // putString(ARG_PARAM1, param1)
                 }
@@ -37,26 +32,16 @@ class ryge : Fragment() {
          savedInstanceState: Bundle?
      ): View? {
          // Inflate the layout for this fragment
-         return inflater.inflate(R.layout.activity_ryge, container, false)
+         return inflater.inflate(R.layout.activity_settings, container, false)
      }
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        stressBtn.setOnClickListener{
-          //  smoked("Stress")
-           // Crashlytics.getInstance().crash() // Force a crash
-        }
 
-        alkoBtn.setOnClickListener {
-          //  smoked("Alkohol")
-        }
 
-        sociBtn.setOnClickListener {
-          //  smoked("Socialt")
-        }
 
-        udBtn.setOnClickListener {
-          //  smoked("Udmattet")
-        }
+
+
+
 
     }
 

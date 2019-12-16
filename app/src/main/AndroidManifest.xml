@@ -13,7 +13,7 @@
         <activity android:name=".Webview" />
         <activity android:name=".Data" />
         <activity android:name=".Overview" />
-        <activity android:name=".ryge" />
+        <activity android:name=".Settings" />
         <activity android:name=".Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

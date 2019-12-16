@@ -59,13 +59,12 @@ if (texts.get(ID).done)
         sharedPref.save(current, "key", this)
 
         val database = FirebaseDatabase.getInstance().getReference("Assignment")
-       // val id = database.push().key
         val formatter = DateTimeFormatter. ofPattern("yyyy-MM-dd")
         val formatted = current.format(formatter)
         val smokey = Svar(svar, formatted)
         Toast.makeText(this,"Data send til firebase", Toast.LENGTH_SHORT).show()
         database.child("UUID").child("Text-" + ID).setValue(smokey)
-      //  database.setValue(smokey)
+        // Crashlytics.getInstance().crash() // Force a crash
 
 
     }

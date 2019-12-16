@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_data.*
 import kotlinx.android.synthetic.main.activity_data.webview
-import kotlinx.android.synthetic.main.activity_ryge.*
+import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_webview.*
 
 class Webview : AppCompatActivity() {

@@ -15,20 +15,20 @@ class Main2Activity : AppCompatActivity()
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId)
         {
-            R.id.navigation_songs ->
+            R.id.navigation_overblik ->
             {
                 val Overview = Overview.newInstance()
                 openFragment(Overview)
 
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_albums ->
+            R.id.navigation_settings ->
             {
-                val ryge = ryge.newInstance()
+                val ryge = Settings.newInstance()
                 openFragment(ryge)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_artists ->
+            R.id.navigation_text ->
             {
                 val data = textListFragment.newInstance()
                 openFragment(data)
