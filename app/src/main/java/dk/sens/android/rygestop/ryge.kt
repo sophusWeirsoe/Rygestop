@@ -42,37 +42,22 @@ class ryge : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         stressBtn.setOnClickListener{
-            smoked("Stress")
+          //  smoked("Stress")
            // Crashlytics.getInstance().crash() // Force a crash
         }
 
         alkoBtn.setOnClickListener {
-            smoked("Alkohol")
+          //  smoked("Alkohol")
         }
 
         sociBtn.setOnClickListener {
-            smoked("Socialt")
+          //  smoked("Socialt")
         }
 
         udBtn.setOnClickListener {
-            smoked("Udmattet")
+          //  smoked("Udmattet")
         }
 
     }
 
-    fun smoked(grund: String){
-        val current = LocalDateTime.now()
-        sharedPref.save(current, "key", activity)
-
-        val database = FirebaseDatabase.getInstance().getReference("Smoke")
-        val id = database.push().key
-        val formatter = DateTimeFormatter. ofPattern("yyyy-MM-dd")
-        val formatted = current.format(formatter)
-        val smokey = smoked(grund, formatted)
-        Toast.makeText(getActivity(),"Data send til firebase", Toast.LENGTH_SHORT).show();
-        database.child(id.toString()).setValue(smokey)
-
-
-
-    }
 }

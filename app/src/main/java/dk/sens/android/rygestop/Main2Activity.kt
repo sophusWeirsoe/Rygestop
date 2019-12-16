@@ -7,24 +7,29 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main2.*
 import java.util.*
 
-class Main2Activity : AppCompatActivity() {
+class Main2Activity : AppCompatActivity()
+{
 
-    private val mNotificationTime = Calendar.getInstance().timeInMillis + 1000*60*5 //Set after one hour from the current time.
+    private val mNotificationTime = Calendar.getInstance().timeInMillis + 1000
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId) {
-            R.id.navigation_songs -> {
+        when (item.itemId)
+        {
+            R.id.navigation_songs ->
+            {
                 val Overview = Overview.newInstance()
                 openFragment(Overview)
 
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_albums -> {
+            R.id.navigation_albums ->
+            {
                 val ryge = ryge.newInstance()
                 openFragment(ryge)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_artists -> {
+            R.id.navigation_artists ->
+            {
                 val data = textListFragment.newInstance()
                 openFragment(data)
                 return@OnNavigationItemSelectedListener true
@@ -33,15 +38,18 @@ class Main2Activity : AppCompatActivity() {
         false
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?)
+    {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
 
        val text = intent.getStringExtra("text") ?: ""
-        if (text.equals("text")){
+        if (text.equals("text"))
+        {
             openFragment(textListFragment.newInstance())
         }
-       else {
+       else
+        {
             openFragment(Overview.newInstance())
         }
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
@@ -50,7 +58,8 @@ class Main2Activity : AppCompatActivity() {
 
 
     }
-    private fun openFragment(fragment: Fragment) {
+    private fun openFragment(fragment: Fragment)
+    {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.container, fragment)
         transaction.addToBackStack(null)
