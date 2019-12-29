@@ -5,13 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
-import kotlinx.android.synthetic.main.activity_webview.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import com.google.android.material.textfield.TextInputEditText
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -42,8 +38,12 @@ if (texts.get(ID).done)
 
         imageButtonNext.setOnClickListener{
             firebaseWrite(assignment.text.toString(), ID)
+            if (!texts.get(ID).done)
+            {
+
             texts.set(ID, Text(texts.get(ID).title, texts.get(ID).des, texts.get(ID).ID, true))
             sharedPref.saveArrayList(texts, "key2", this)
+            }
             val intent = Intent(this, Main2Activity::class.java)
             intent.putExtra("text", "text")
             startActivity(intent)

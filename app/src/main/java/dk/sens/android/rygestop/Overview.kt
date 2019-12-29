@@ -55,20 +55,6 @@ class Overview : Fragment() {
 {
     n = n+1
 }
-   /*else
-         {
-             m = m +1
-         }
-        }
-
-        if(boolean)
-        {
-        return n
-        }
-        else
-        {
-            return m
-        }*/
 
     }
         return n
