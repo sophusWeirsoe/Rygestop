@@ -50,6 +50,14 @@ if (texts.get(ID).done)
         }
 
 
+        imageButtonBack.setOnClickListener{
+            val intent = Intent(this, Webview::class.java)
+            intent.putExtra("ID", ID)
+            startActivity(intent)
+
+        }
+
+
 
     }
 
