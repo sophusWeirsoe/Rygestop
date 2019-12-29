@@ -45,8 +45,22 @@ public class sharedPref {
         Gson gson = new Gson();
         String json = prefs.getString(key, null);
         Type type = new TypeToken<ArrayList<Text>>() {}.getType();
-        return gson.fromJson(json, type);
+
+
+        if(json != null && !json.isEmpty())
+        {
+
+            return gson.fromJson(json, type);
+        }
+        else
+        {
+            ArrayList<Text> texts = new ArrayList<>();
+            return texts;
+        }
+
+
     }
+
 
     public static void saveUUID(String UUID, String key, Context context ){
         SharedPreferences prefs = context.getSharedPreferences("shared preferences", MODE_PRIVATE);

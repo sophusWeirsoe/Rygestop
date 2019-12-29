@@ -1,12 +1,16 @@
 package dk.sens.android.rygestop
 
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_layout.view.*
+
 
 class Adapter(val textList: ArrayList<Text>, val clickListener: (Text) -> Unit) : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
@@ -14,6 +18,15 @@ class Adapter(val textList: ArrayList<Text>, val clickListener: (Text) -> Unit) 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder?.txtName?.text = textList[position].title
         holder?.txtTitle?.text = textList[position].des
+        val parent = holder.txtName.parent as LinearLayout
+        if(textList[position].done){
+            parent.background = ColorDrawable(
+                Color.GREEN)
+        }
+    else {
+        parent.background = ColorDrawable(Color.WHITE)
+    }
+
 
         (holder as ViewHolder).bind(textList[position], clickListener)
 
@@ -24,6 +37,7 @@ class Adapter(val textList: ArrayList<Text>, val clickListener: (Text) -> Unit) 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent?.context).inflate(R.layout.item_layout, parent, false)
+
         return ViewHolder(v)
     }
 

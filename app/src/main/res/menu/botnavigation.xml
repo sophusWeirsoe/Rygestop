@@ -3,14 +3,14 @@
 
     <item
             android:id="@+id/navigation_overblik"
-            android:title="Overblik"/>
+            android:icon="@drawable/ic_home_black_24dp"/>
 
     <item
             android:id="@+id/navigation_settings"
-            android:title="Indstillinger"/>
+            android:icon="@drawable/ic_settings_applications_black_24dp" />
 
     <item
             android:id="@+id/navigation_text"
-            android:title="Tekster"/>
+            android:icon="@drawable/ic_text_align_left_black_24dp"/>
 
 </menu>
