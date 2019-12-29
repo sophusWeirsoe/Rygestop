@@ -59,11 +59,13 @@ if (texts.get(ID).done)
         sharedPref.save(current, "key", this)
 
         val database = FirebaseDatabase.getInstance().getReference("Assignment")
-        val formatter = DateTimeFormatter. ofPattern("yyyy-MM-dd")
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
         val formatted = current.format(formatter)
         val smokey = Svar(svar, formatted)
         Toast.makeText(this,"Data send til firebase", Toast.LENGTH_SHORT).show()
-        database.child("UUID").child("Text-" + ID).setValue(smokey)
+
+
+        database.child(sharedPref.loadUUID("key3", this)).child("Text-" + ID).setValue(smokey)
         // Crashlytics.getInstance().crash() // Force a crash
 
 
@@ -71,14 +73,14 @@ if (texts.get(ID).done)
 
     fun firebaseRead(ID: Int)
     {
-        val database = FirebaseDatabase.getInstance().getReference("Assignment").child("UUID").child("Text-" + ID).child("svar")
+        val database = FirebaseDatabase.getInstance().getReference("Assignment").child(sharedPref.loadUUID("key3", this)).child("Text-" + ID).child("svar")
 
         val postListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 // Get Post object and use the values to update the UI
                val post = dataSnapshot.getValue(String::class.java)
                 assignment.setText(post)
-                Log.i("TAG", post)
+              //  Log.i("TAG", post)
                 // ...
             }
 

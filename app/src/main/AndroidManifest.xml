@@ -4,14 +4,13 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/logo_v1"
             android:label="Ryge-afvænning"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".TextAssignment"></activity>
         <activity android:name=".Webview" />
-        <activity android:name=".Data" />
         <activity android:name=".Overview" />
         <activity android:name=".Settings" />
         <activity android:name=".Main2Activity">
