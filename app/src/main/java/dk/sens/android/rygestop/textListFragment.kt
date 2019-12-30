@@ -49,12 +49,7 @@ class textListFragment : Fragment(){
 
 
         var texts  = sharedPref.loadArrayList("key2", activity)
-        if (texts == null)
-        {
-                texts = ArrayList<Text>()
-                texts.add(Text("Ryge-afvænning tekst " + (texts.size +1).toString(), "Tryk for at læse", texts.size, false))
-                sharedPref.saveArrayList(texts, "key2", activity)
-        }
+
 
 
         var adapter = Adapter(texts,{text : Text -> ItemClicked(text)} )

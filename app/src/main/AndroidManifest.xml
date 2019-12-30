@@ -9,6 +9,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <receiver android:name="dk.sens.android.rygestop.MyReceiver" >
+        </receiver>
         <activity android:name=".TextAssignment"></activity>
         <activity android:name=".Webview" />
         <activity android:name=".Overview" />

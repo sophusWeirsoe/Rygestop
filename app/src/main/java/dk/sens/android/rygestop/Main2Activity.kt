@@ -10,7 +10,7 @@ import java.util.*
 class Main2Activity : AppCompatActivity()
 {
 
-    private val mNotificationTime = Calendar.getInstance().timeInMillis + 1000
+   // private val mNotificationTime = Calendar.getInstance().timeInMillis + 1000
 
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId)
@@ -42,6 +42,7 @@ class Main2Activity : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
+        notification.createNotificationChannel(this)
 
        val text = intent.getStringExtra("text") ?: ""
         if (text.equals("text"))
@@ -54,7 +55,7 @@ class Main2Activity : AppCompatActivity()
         }
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
-            NotificationUtils().setNotification(mNotificationTime, this@Main2Activity)
+      //  NotificationUtils().setNotification(mNotificationTime, this@Main2Activity)
 
 
     }

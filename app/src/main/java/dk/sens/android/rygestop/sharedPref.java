@@ -55,6 +55,7 @@ public class sharedPref {
         else
         {
             ArrayList<Text> texts = new ArrayList<>();
+            texts.add(new Text("Ryge-afvænning tekst " + Integer.toString(texts.size()+1), "Tryk for at læse", texts.size(), false));
             return texts;
         }
 
@@ -88,6 +89,35 @@ public class sharedPref {
                 saveUUID(json2, key, context);
                 return gson.fromJson(json2, type);
             }
+
+
+    }
+
+    public static void saveSettings(Settings_notifications Settings, String key, Context context ){
+        SharedPreferences prefs = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(Settings);
+        editor.putString(key, json);
+        editor.apply();
+    }
+
+    public static Settings_notifications loadSettings( String key, Context context){
+        SharedPreferences prefs = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = prefs.getString(key, null);
+        Type type = new TypeToken<Settings_notifications>() {}.getType();
+
+        if(json != null && !json.isEmpty())
+        {
+
+            return gson.fromJson(json, type);
+        }
+        else
+        {
+            Settings_notifications settings = new Settings_notifications(7,false);
+            return settings;
+        }
 
 
     }
