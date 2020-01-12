@@ -32,8 +32,11 @@ class TextAssignment : AppCompatActivity() {
 if (texts.get(ID).done)
 {
     firebaseRead(ID)
-
-
+}
+        else
+{
+    val text = intent.getStringExtra("text-" + ID.toString())
+    assignment.setText(text)
 }
 
         imageButtonNext.setOnClickListener{
@@ -53,6 +56,7 @@ if (texts.get(ID).done)
         imageButtonBack.setOnClickListener{
             val intent = Intent(this, Webview::class.java)
             intent.putExtra("ID", ID)
+            intent.putExtra("text-" + ID.toString(), assignment.text.toString())
             startActivity(intent)
 
         }

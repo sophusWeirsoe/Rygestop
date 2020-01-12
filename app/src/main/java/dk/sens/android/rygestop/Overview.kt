@@ -1,11 +1,17 @@
 package dk.sens.android.rygestop
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.text.Html
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_overview.*
+import java.io.File
+import java.io.InputStream
 
 
 class Overview : Fragment() {
@@ -42,6 +48,13 @@ class Overview : Fragment() {
         textView1.text = "Tekster: " + texts.size
         textView2.text = "Opgaver besvarede: " + read(true,texts)
         textView3.text = "Nye tekster: " + read(false,texts)
+
+        feedback_button.setOnClickListener{
+            sendEmail()
+        }
+
+
+
     }
 
     fun read(boolean: Boolean,texts: ArrayList<Text>): Int
@@ -55,9 +68,19 @@ class Overview : Fragment() {
 {
     n = n+1
 }
-
     }
         return n
+    }
+    fun sendEmail() {
+        val emailIntent = Intent(Intent.ACTION_SENDTO)
+        emailIntent.data = Uri.parse("mailto:")
+        val addressees = arrayOf("sophusweirsoe@hotmail.dk", "pilefletter@hotmail.com")
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Ryge? - Feedback")
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Skriv din feedback her")
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, addressees)
+        startActivity(Intent.createChooser(emailIntent, "Choose Email Client..."))
+
+
     }
 
 

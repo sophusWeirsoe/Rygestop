@@ -45,9 +45,9 @@ class Settings : Fragment() {
          val days = rootView.findViewById(R.id.days) as TextView
          val save = rootView.findViewById(R.id.save) as Button
          var settings = sharedPref.loadSettings("key4", activity)
-         days.text = settings.dage.toString()
+         days.text = settings.dage.toString() + " dage"
 
-         seek.setProgress(settings.dage)
+         seek.setProgress(settings.dage -1)
          if (settings.notifications) {
              switch.isChecked = true
          }
@@ -68,9 +68,9 @@ class Settings : Fragment() {
          seek.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
 
              override fun onProgressChanged(seekBar: SeekBar, i: Int, b: Boolean) {
-
-                 days.text = "$i  dage"
-                 settings.dage = i
+var n = i+1
+                 days.text = "$n  dage"
+                 settings.dage = n
              }
              override fun onStartTrackingTouch(seekBar: SeekBar) {
                  // Do something
@@ -92,8 +92,11 @@ class Settings : Fragment() {
              mAlarmManager!!.cancel(mPendingIntent)
              mAlarmManager!!.setRepeating(
                      AlarmManager.RTC_WAKEUP, System.currentTimeMillis(),
-                     (settings.dage * 60 * 60*1000).toLong(), mPendingIntent
+                     (settings.dage*24*60*60*1000).toLong(), mPendingIntent
+
+
                  )
+             Toast.makeText(activity,"Indstillinger gemt", Toast.LENGTH_SHORT).show()
 
          }
 

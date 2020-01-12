@@ -13,14 +13,14 @@
             android:layout_width="318dp"
             android:layout_height="95dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="70dp"
             android:layout_marginEnd="10dp"
             android:text="Tekster: 1"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +33,7 @@
             android:layout_marginEnd="10dp"
             android:text="Opgaver besvarede: 1"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
@@ -49,11 +49,26 @@
             android:layout_marginEnd="10dp"
             android:text="Ulæste Tekster: 1"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+            android:id="@+id/feedback_button"
+            android:layout_width="112dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/button_gradient"
+            android:text="Feedback"
+            android:textSize="18sp"
+            android:typeface="monospace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

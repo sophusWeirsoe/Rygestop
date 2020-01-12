@@ -35,7 +35,7 @@ public class notification {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "ID")
-                .setSmallIcon(R.drawable.logo_v1)
+                .setSmallIcon(R.drawable.logo_v2)
                 .setContentTitle("Ny tekst klar")
                 .setContentText("Der er en ny tekst klar til dig, klik for at læse nu.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
