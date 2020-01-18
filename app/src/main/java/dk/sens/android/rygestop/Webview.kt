@@ -14,10 +14,18 @@ class Webview : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_webview)
-        webview.loadUrl("file:///android_asset/text2.html")
-        webview.getSettings().setBuiltInZoomControls(true)
         val ID = intent.getIntExtra("ID", 0)
         val text = intent.getStringExtra("text-" + ID.toString())
+
+        webview.loadUrl("file:///android_asset/text" +(ID+1)+ ".html")
+        webview.getSettings().setBuiltInZoomControls(true)
+
+
+
+
+
+
+
 
 
         imageButtonNext.setOnClickListener {

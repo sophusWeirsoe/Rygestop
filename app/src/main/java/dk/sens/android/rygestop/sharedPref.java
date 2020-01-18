@@ -54,8 +54,12 @@ public class sharedPref {
         }
         else
         {
+
+
             ArrayList<Text> texts = new ArrayList<>();
-            texts.add(new Text("Ryge-afvænning tekst " + Integer.toString(texts.size()+1), "Tryk for at læse", texts.size(), false));
+            String title = "Titel_" + Integer.toString(texts.size()+1);
+           int r = context.getResources().getIdentifier(title, "string", context.getPackageName());
+            texts.add(new Text(context.getString(r), "Tryk for at læse", texts.size(), false));
             return texts;
         }
 
@@ -115,7 +119,7 @@ public class sharedPref {
         }
         else
         {
-            Settings_notifications settings = new Settings_notifications(7,false);
+            Settings_notifications settings = new Settings_notifications(14,false);
             return settings;
         }
 

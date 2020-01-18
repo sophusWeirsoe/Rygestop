@@ -8,7 +8,7 @@
         tools:context=".TextAssignment">
 
     <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/opgave"
             android:layout_width="342dp"
             android:layout_height="92dp"
             android:text="Vælg et tidspunkt, hvor du for en (ubestemt) tid, ryger din sidste smøg. Skriv så dine oplevelser, som tanker, følelser og fornemmelser (i kroppen). Hvad tænkte, følte og mærkede du, da du (måske) greb ud efter en smøg? Det kan måske være smart at lave denne øvelse i weekenden."
@@ -27,7 +27,7 @@
             android:layout_marginTop="10dp"
             android:hint=""
             app:boxBackgroundColor="#FFFFFF"
-            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            app:layout_constraintTop_toBottomOf="@+id/opgave"
             tools:layout_editor_absoluteX="-3dp">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -78,6 +78,13 @@
             android:text="Dit svar:"
             android:textColor="#FAF8F8"
             app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/succes"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

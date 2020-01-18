@@ -3,6 +3,7 @@ package dk.sens.android.rygestop
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import com.google.firebase.database.FirebaseDatabase
 import java.time.LocalDateTime
@@ -25,7 +26,10 @@ class TextAssignment : AppCompatActivity() {
         setContentView(R.layout.activity_text_assignment)
         val assignment = findViewById<TextInputEditText>(R.id.assignment)
         val ID = intent.getIntExtra("ID", 0)
+        val opgaveString = "Opgave_" + Integer.toString(ID+1)
+        val rr = getResources().getIdentifier(opgaveString, "string", getPackageName())
 
+        opgave.setText(getString(rr))
         var texts  = sharedPref.loadArrayList("key2", this)
 
 
@@ -47,9 +51,14 @@ if (texts.get(ID).done)
             texts.set(ID, Text(texts.get(ID).title, texts.get(ID).des, texts.get(ID).ID, true))
             sharedPref.saveArrayList(texts, "key2", this)
             }
-            val intent = Intent(this, Main2Activity::class.java)
-            intent.putExtra("text", "text")
-            startActivity(intent)
+            succes.setAnimation("success.json")
+            succes.playAnimation()
+            val handler = Handler()
+            handler.postDelayed(Runnable {
+                val intent = Intent(this, Main2Activity::class.java)
+                intent.putExtra("text", "text")
+                startActivity(intent)
+            }, 1500)
         }
 
 

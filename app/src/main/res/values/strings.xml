@@ -2,5 +2,28 @@
     <string name="app_name">Rygestop</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+
+
+    <string name="Titel_1">Om Appen</string>
+    <string name="Titel_2">Ryg endelig videre</string>
+    <string name="Titel_3">Nikotinen</string>
+    <string name="Titel_4">Risikoen</string>
+    <string name="Titel_5">Vane</string>
+
+
+    <string name="Opgave_1">ingen øvelse til denne tekst</string>
+    <string name="Opgave_2">Din opgave er: efter hver smøg eller så mange som muligt, skriver du hvordan det var at ryge. Tanker, følelser, lugt, smag, fornemmelser og måske tidsfornemmelse.</string>
+    <string name="Opgave_3">Denne øvelse går ud på at du finder frem til, hvordan du har med at skulle ryge den sidste cigaret. Når øvelsen er færdig ryger du endelig videre, hvis det er det du har lysttil. Vælg et tidspunkt, hvor du for en(ubestemt) tid, ryger din sidste smøg. Skriv så dine oplevelser, somtanker, følelser og fornemmelser</string>
+    <string name="Opgave_4">Skriv hvilke rissi du spontat kender til? Du kan måske lave det som en mindmap. Giv de forskellige rissipoint alt efter, hvor alvor du mener denenkelte er. Find ud af gennem dagen,hvornår du tænker på den en eller den andenrisiko. Hvad tænker omkring denrisiko? Hvilke risici tænker du slet ikke på? Hvorfor mon? Find ud gennem dagen om dutænker på andre risici, når du ser andrerygere</string>
+    <string name="Opgave_5">Brug de næste par dage til at overvejeom du ryger unden at tænke over det. Sker det ind i mellem at du er mere beskæftiget med noget andet end rygningen. Sker det at du i et mindste ind i mellem tænker på noget andet mens dutager dig en smøg? Snakker du med andre, og ryger uden at tænke nærmere over det? Laver du noget, mens du ryger, så du ikke tænker på rygningen? Tager du dig selv i ikke at tænke på at du rent faktisk ryger?</string>
+
+
+
+
+
+
+
+
 </resources>
