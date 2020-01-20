@@ -10,7 +10,6 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
         <activity android:name=".NavigationView"></activity>
-        <activity android:name=".MainActivity" />
 
         <receiver android:name=".AlarmReceiver" />
 
@@ -18,6 +17,7 @@
         <activity android:name=".TextWebview" />
         <activity android:name=".Overblik" />
         <activity android:name=".Indstillinger" />
+        <activity android:name=".textList" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,9 +30,6 @@
                 android:name=".AlarmReceiver"
                 android:enabled="true" />
 
-        <service
-                android:name=".NotificationService"
-                android:enabled="true" />
     </application>
 
 </manifest>
