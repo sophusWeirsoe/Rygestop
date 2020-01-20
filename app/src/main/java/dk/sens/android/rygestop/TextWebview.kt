@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_data.webview
 import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_webview.*
 import java.io.InputStream
-//comment
+
 class TextWebview : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
