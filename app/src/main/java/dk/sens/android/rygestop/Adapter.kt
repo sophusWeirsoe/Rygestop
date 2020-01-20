@@ -12,20 +12,24 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_layout.view.*
 
 
-class Adapter(val textList: ArrayList<Text>, val clickListener: (Text) -> Unit) : RecyclerView.Adapter<Adapter.ViewHolder>() {
+class Adapter(val textList: ArrayList<Text>, val clickListener: (Text) -> Unit) : RecyclerView.Adapter<Adapter.ViewHolder>()
+{
 
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int)
+    {
         holder?.txtName?.text = textList[position].title
         holder?.txtTitle?.text = textList[position].des
         val parent = holder.txtName.parent as LinearLayout
-        if(textList[position].done){
+        if(textList[position].done)
+        {
             parent.background = ColorDrawable(
                 Color.GREEN)
         }
-    else {
+    else
+        {
         parent.background = ColorDrawable(Color.WHITE)
-    }
+        }
 
 
         (holder as ViewHolder).bind(textList[position], clickListener)
@@ -35,13 +39,15 @@ class Adapter(val textList: ArrayList<Text>, val clickListener: (Text) -> Unit) 
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder
+    {
         val v = LayoutInflater.from(parent?.context).inflate(R.layout.item_layout, parent, false)
 
         return ViewHolder(v)
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount(): Int
+    {
         return textList.size
     }
 
@@ -49,11 +55,13 @@ class Adapter(val textList: ArrayList<Text>, val clickListener: (Text) -> Unit) 
 
 
 
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
+    {
         val txtName = itemView.findViewById<TextView>(R.id.txtName)
         val txtTitle = itemView.findViewById<TextView>(R.id.txtTitle)
 
-        fun bind(text: Text, clickListener: (Text) -> Unit) {
+        fun bind(text: Text, clickListener: (Text) -> Unit)
+        {
             itemView.txtName.text = text.title
             itemView.txtTitle.text = text.des
             itemView.setOnClickListener { clickListener(text)}

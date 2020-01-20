@@ -9,15 +9,15 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity"></activity>
+        <activity android:name=".NavigationView"></activity>
         <activity android:name=".MainActivity" />
 
-        <receiver android:name=".MyReceiver" />
+        <receiver android:name=".AlarmReceiver" />
 
         <activity android:name=".TextAssignment" />
-        <activity android:name=".Webview" />
-        <activity android:name=".Overview" />
-        <activity android:name=".Settings" />
+        <activity android:name=".TextWebview" />
+        <activity android:name=".Overblik" />
+        <activity android:name=".Indstillinger" />
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

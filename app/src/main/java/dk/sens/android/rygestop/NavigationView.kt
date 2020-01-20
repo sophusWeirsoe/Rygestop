@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main2.*
 
-class Main2Activity : AppCompatActivity()
+class NavigationView : AppCompatActivity()
 {
 
    // private val mNotificationTime = Calendar.getInstance().timeInMillis + 1000
@@ -18,7 +18,7 @@ class Main2Activity : AppCompatActivity()
             R.id.navigation_overblik ->
             {
 
-                val Overview = Overview.newInstance()
+                val Overview = Overblik.newInstance()
               if (slideValue.equals(0)){
                   openFragment(Overview, 1)
               }
@@ -31,7 +31,7 @@ class Main2Activity : AppCompatActivity()
             }
             R.id.navigation_settings ->
             {
-                val settings = Settings.newInstance()
+                val settings = Indstillinger.newInstance()
 
                 if (slideValue.equals(0)){
                     openFragment(settings, 3)
@@ -47,7 +47,7 @@ class Main2Activity : AppCompatActivity()
             }
             R.id.navigation_text ->
             {
-                val text = textListFragment.newInstance()
+                val text = textList.newInstance()
                 if (slideValue.equals(2)){
                     openFragment(text, 1)
                 }
@@ -73,11 +73,11 @@ class Main2Activity : AppCompatActivity()
        val text = intent.getStringExtra("text") ?: ""
         if (text.equals("text"))
         {
-            openFragment(textListFragment.newInstance(), 1)
+            openFragment(textList.newInstance(), 1)
         }
        else
         {
-            openFragment(Overview.newInstance(),1)
+            openFragment(Overblik.newInstance(),1)
         }
         navigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 

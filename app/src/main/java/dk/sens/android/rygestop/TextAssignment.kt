@@ -55,7 +55,7 @@ if (texts.get(ID).done)
             succes.playAnimation()
             val handler = Handler()
             handler.postDelayed(Runnable {
-                val intent = Intent(this, Main2Activity::class.java)
+                val intent = Intent(this, NavigationView::class.java)
                 intent.putExtra("text", "text")
                 startActivity(intent)
             }, 1500)
@@ -63,7 +63,7 @@ if (texts.get(ID).done)
 
 
         imageButtonBack.setOnClickListener{
-            val intent = Intent(this, Webview::class.java)
+            val intent = Intent(this, TextWebview::class.java)
             intent.putExtra("ID", ID)
             intent.putExtra("text-" + ID.toString(), assignment.text.toString())
             startActivity(intent)
@@ -82,11 +82,11 @@ if (texts.get(ID).done)
         val database = FirebaseDatabase.getInstance().getReference("Assignment")
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
         val formatted = current.format(formatter)
-        val smokey = Svar(svar, formatted)
+        val svar2 = Svar(svar, formatted)
         Toast.makeText(this,"Data send til firebase", Toast.LENGTH_SHORT).show()
 
 
-        database.child(sharedPref.loadUUID("key3", this)).child("Text-" + ID).setValue(smokey)
+        database.child(sharedPref.loadUUID("key3", this)).child("Text-" + ID).setValue(svar2)
         // Crashlytics.getInstance().crash() // Force a crash
 
 

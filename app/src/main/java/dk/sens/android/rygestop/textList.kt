@@ -1,25 +1,21 @@
 package dk.sens.android.rygestop
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_data.*
-import java.time.LocalDateTime
 
-class textListFragment : Fragment(){
+class textList : Fragment(){
 
     companion object
     {
 
         @JvmStatic
         fun newInstance() =
-            textListFragment().apply{
+            textList().apply{
                 arguments = Bundle().apply{
                     // putString(ARG_PARAM1, param1)
                 }
@@ -60,7 +56,7 @@ class textListFragment : Fragment(){
 
 
     private fun ItemClicked(text : Text) {
-        val intent = Intent(context, Webview::class.java)
+        val intent = Intent(context, TextWebview::class.java)
         intent.putExtra("ID", text.ID)
 
         val intent2 = Intent(context, TextAssignment::class.java)

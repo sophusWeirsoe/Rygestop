@@ -3,24 +3,22 @@ package dk.sens.android.rygestop
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.Html
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.activity_overview.*
-import java.io.File
-import java.io.InputStream
 
 
-class Overview : Fragment() {
+class Overblik : Fragment() {
+
+    val key2 = "key2"
 
     companion object {
 
         @JvmStatic
         fun newInstance() =
-            Overview().apply {
+            Overblik().apply {
                 arguments = Bundle().apply {
                     // putString(ARG_PARAM1, param1)
                 }
@@ -44,7 +42,7 @@ class Overview : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        var texts  = sharedPref.loadArrayList("key2", context)
+        var texts  = sharedPref.loadArrayList(key2, context)
         textView1.text = "Tekster: " + texts.size
         textView2.text = "Opgaver besvarede: " + read(true,texts)
         textView3.text = "Nye tekster: " + read(false,texts)

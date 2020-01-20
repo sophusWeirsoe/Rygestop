@@ -15,7 +15,7 @@ setupAnimation()
 
         val handler = Handler()
         handler.postDelayed(Runnable {
-            val intent = Intent(this@Splash, Main2Activity::class.java)
+            val intent = Intent(this@Splash, NavigationView::class.java)
             startActivity(intent)
             finish()
         }, 2000)

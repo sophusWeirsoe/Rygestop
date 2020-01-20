@@ -23,13 +23,6 @@ public class sharedPref {
         editor.apply();
     }
 
-    public static LocalDateTime load( String key, Context context){
-        SharedPreferences prefs = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = prefs.getString(key, null);
-        Type type = new TypeToken<LocalDateTime>() {}.getType();
-        return gson.fromJson(json, type);
-    }
 
     public static void saveArrayList(ArrayList<Text> texts, String key, Context context ){
         SharedPreferences prefs = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
@@ -97,7 +90,7 @@ public class sharedPref {
 
     }
 
-    public static void saveSettings(Settings_notifications Settings, String key, Context context ){
+    public static void saveSettings(Settings Settings, String key, Context context ){
         SharedPreferences prefs = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         Gson gson = new Gson();
@@ -106,11 +99,11 @@ public class sharedPref {
         editor.apply();
     }
 
-    public static Settings_notifications loadSettings( String key, Context context){
+    public static Settings loadSettings( String key, Context context){
         SharedPreferences prefs = context.getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();
         String json = prefs.getString(key, null);
-        Type type = new TypeToken<Settings_notifications>() {}.getType();
+        Type type = new TypeToken<Settings>() {}.getType();
 
         if(json != null && !json.isEmpty())
         {
@@ -119,7 +112,7 @@ public class sharedPref {
         }
         else
         {
-            Settings_notifications settings = new Settings_notifications(14,false);
+            Settings settings = new Settings(14,false);
             return settings;
         }
 

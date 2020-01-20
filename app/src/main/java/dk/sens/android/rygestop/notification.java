@@ -29,7 +29,7 @@ public class notification {
     }
    static void createNotification(Context context, int id) {
 
-        Intent intent = new Intent(context, Main2Activity.class);
+        Intent intent = new Intent(context, NavigationView.class);
         intent.putExtra("text", "text");
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 0);

@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_settings.*
 import kotlinx.android.synthetic.main.activity_webview.*
 import java.io.InputStream
 
-class Webview : AppCompatActivity() {
+class TextWebview : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,18 +37,19 @@ class Webview : AppCompatActivity() {
 
         share.setOnClickListener {
 
-            val i = Intent(Intent.ACTION_SEND)
-            i.type = "text/html"
-
-            val inputStream: InputStream = assets.open("text2.html")
-            val inputString = inputStream.bufferedReader().use{it.readText()}
-
-            i.putExtra(Intent.EXTRA_TEXT, inputString)
-            startActivity(Intent.createChooser(i, "Share text"))
+           share()
         }
     }
 
-    fun atButtom(){
+    fun share(){
+        val i = Intent(Intent.ACTION_SEND)
+        i.type = "text/html"
+
+        val inputStream: InputStream = assets.open("text2.html")
+        val inputString = inputStream.bufferedReader().use{it.readText()}
+
+        i.putExtra(Intent.EXTRA_TEXT, inputString)
+        startActivity(Intent.createChooser(i, "Share text"))
 
     }
 }
